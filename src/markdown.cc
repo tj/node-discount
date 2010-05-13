@@ -34,7 +34,7 @@ Parse(const Arguments& args) {
     len = mkd_document(doc, &buf);
   Handle<String> md = String::New(buf);
   mkd_cleanup(doc);
-  return md;
+  return scope.Close(md);
 }
 
 /*
