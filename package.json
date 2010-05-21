@@ -1,0 +1,13 @@
+{ "name": "markdown"
+, "description": "C markdown implementation by David Parsons"
+, "tags": ["markdown", "md", "parser", "native"]
+, "author" : "visionmedia"
+, "version": "0.1.0"
+, "lib": "./build/default"
+, "main": "./build/default/markdown"
+, "scripts": { "preinstall": "node-waf configure build" }
+, "repository" : { "type" : "git"
+                 , "url" : "http://github.com/visionmedia/node-discount.git"
+                 }
+, "bugs" : { "web" : "http://github.com/visionmedia/node-discount/issues" }
+}
