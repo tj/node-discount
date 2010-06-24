@@ -45,6 +45,6 @@ extern "C" void
 init (Handle<Object> target)
 {
   HandleScope scope;
-  target->Set(String::New("version"), String::New("0.1.1"));
+  target->Set(String::New("version"), String::New("0.1.2"));
   NODE_SET_METHOD(target, "parse", Parse);
 }
