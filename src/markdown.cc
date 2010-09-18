@@ -7,6 +7,7 @@
 
 #include <v8.h>
 #include <node.h>
+#include <string.h>
 
 extern "C" {
   #include <mkdio.h>
@@ -22,7 +23,7 @@ using namespace node;
 static Handle<Value>
 Parse(const Arguments& args) {
   HandleScope scope;
-  char *buf;
+  char *res, buf [32768] = "";
   int len;
   if (args.Length() < 1 || !args[0]->IsString())
     return ThrowException(Exception::TypeError(String::New("String expected")));
@@ -31,8 +32,12 @@ Parse(const Arguments& args) {
   if ((doc = mkd_string(*in, in.length(), 0)) == 0)
     return ThrowException(Exception::Error(String::New("Failed to parse markdown")));
   if (mkd_compile(doc, 0))
-    len = mkd_document(doc, &buf);
+    len = mkd_document(doc, &res);
+  if (len != EOF) {
+    strncat(buf, res, len);
+  }
   Handle<String> md = String::New(buf);
+
   mkd_cleanup(doc);
   return scope.Close(md);
 }
