@@ -1,7 +1,0 @@
----
-  name: Markdown
-  description: C markdown implementation by David Parsons
-  tags: markdown md parser native
-  build: node-waf configure build
-  lib: build/default
-  version: 0.0.1
