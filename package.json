@@ -1,4 +1,4 @@
-{ "name": "markdown"
+{ "name": "discount"
 , "description": "C markdown implementation using discount"
 , "tags": ["markdown", "md", "parser", "native"]
 , "author" : "TJ Holowaychuk <tj@vision-media.ca>"

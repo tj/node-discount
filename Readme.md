@@ -9,19 +9,11 @@
 You will need to install [Discount](http://github.com/Orc/discount) from source, or using
 a package management tool such as [homebrew](http://github.com/mxcl/homebrew), or apt-get.
 
-When using the [Kiwi](http://github.com/visionmedia/kiwi) package manager for node run:
-
-    $ kiwi install markdown
-
-Otherwise you will need to update the git submodules and run:
-
-    $ make
-
-In order to generate _build/markdown.node_.
+    $ npm install discount
   
 ## Usage
 
-    var md = require('markdown')
+    var md = require('discount');
     md.parse('markdown is *awesome*')
     // => "<p>markdown is <em>awesome</em></p>"
 
