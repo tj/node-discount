@@ -10,7 +10,7 @@ def configure(conf):
   conf.check_tool('node_addon')
   conf.check(
     lib = 'markdown',
-    libpath = ['/usr/lib', '/usr/local/lib', '/opt/local/lib'],
+    libpath = ['/usr/lib', '/usr/local/lib'],
     uselib_store = 'DISCOUNT'
   )
 
