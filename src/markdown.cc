@@ -67,8 +67,8 @@ init (Handle<Object> target) {
   flags->Set(String::New("tagText"), Number::New(MKD_TAGTEXT));
   flags->Set(String::New("noExt"),   Number::New(MKD_NO_EXT));
   flags->Set(String::New("cdata"),   Number::New(MKD_CDATA));
-  // flags->Set(String::New("noSuperscript"), Number::New(MKD_NOSUPERSCRIPT));
-  // flags->Set(String::New("noRelaxed"), Number::New(MKD_NORELAXED));
+  flags->Set(String::New("noSuperscript"), Number::New(MKD_NOSUPERSCRIPT));
+  flags->Set(String::New("noRelaxed"), Number::New(MKD_NORELAXED));
   flags->Set(String::New("noTables"), Number::New(MKD_NOTABLES));
   flags->Set(String::New("noStrikethrough"), Number::New(MKD_NOSTRIKETHROUGH));
   flags->Set(String::New("toc"), Number::New(MKD_TOC));
@@ -77,10 +77,10 @@ init (Handle<Object> target) {
   flags->Set(String::New("safelink"), Number::New(MKD_SAFELINK));
   flags->Set(String::New("noHeader"), Number::New(MKD_NOHEADER));
   flags->Set(String::New("tabStop"), Number::New(MKD_TABSTOP));
-  // flags->Set(String::New("noDivQuote"), Number::New(MKD_NODIVQUOTE));
-  // flags->Set(String::New("noAlphaList"), Number::New(MKD_NOALPHALIST));
-  // flags->Set(String::New("noDlist"), Number::New(MKD_NODLIST));
-  // flags->Set(String::New("extraFootnote"), Number::New(MKD_EXTRA_FOOTNOTE));
+  flags->Set(String::New("noDivQuote"), Number::New(MKD_NODIVQUOTE));
+  flags->Set(String::New("noAlphaList"), Number::New(MKD_NOALPHALIST));
+  flags->Set(String::New("noDlist"), Number::New(MKD_NODLIST));
+  flags->Set(String::New("extraFootnote"), Number::New(MKD_EXTRA_FOOTNOTE));
   target->Set(String::New("version"), String::New("0.2.0"));
   target->Set(String::New("flags"), flags);
   NODE_SET_METHOD(target, "parse", Parse);
