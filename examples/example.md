@@ -1,6 +1,6 @@
-
 # Title
 
+[this is a link](http://foo)
 Just some random paragraph stuff here.
 
 ## Lists
@@ -17,3 +17,5 @@ Even some code:
 
     foobar!
     bazz!
+
+~~strikethrough~~
