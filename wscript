@@ -8,10 +8,13 @@ def set_options(opt):
 def configure(conf):
   conf.check_tool('compiler_cxx')
   conf.check_tool('node_addon')
+  conf.check_cfg(atleast_pkgconfig_version='0.0.0', mandatory=True, errmsg='pkg-config was not found')
   conf.check(
     lib = 'markdown',
     libpath = ['/usr/lib', '/usr/local/lib'],
-    uselib_store = 'DISCOUNT'
+    uselib_store = 'DISCOUNT',
+    mandatory = True,
+    errmsg='markdown was not found (on homebrew this is "discount")'
   )
 
 def build(bld):
