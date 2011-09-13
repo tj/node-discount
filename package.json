@@ -5,6 +5,7 @@
 , "version": "0.2.0"
 , "lib": "./build/default"
 , "main": "./build/default/markdown"
+, "scripts": { "preinstall": "node-waf configure build" }
 , "repository" : { "type" : "git"
                  , "url" : "http://github.com/visionmedia/node-discount.git"
                  }
