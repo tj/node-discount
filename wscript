@@ -9,18 +9,13 @@ def configure(conf):
   conf.check_tool('compiler_cxx')
   conf.check_tool('node_addon')
   conf.check_cfg(atleast_pkgconfig_version='0.0.0', mandatory=True, errmsg='pkg-config was not found')
-  conf.check(
-    lib = 'markdown',
-    libpath = ['/usr/lib', '/usr/local/lib'],
-    uselib_store = 'DISCOUNT',
-    mandatory = True,
-    errmsg='markdown was not found (on homebrew this is "discount")'
-  )
 
 def build(bld):
+  bld.exec_command('cp -r ../discount/* .')
+  bld.exec_command('./configure.sh && make')
+
   obj = bld.new_task_gen('cxx', 'shlib', 'node_addon')
-  obj.linkflags = ["-lmarkdown", "-mimpure-text"]
+  obj.linkflags = ["-lmarkdown", "-mimpure-text", "-L."]
   obj.target = 'markdown'
   obj.source = 'src/markdown.cc'
-  obj.uselib = 'DISCOUNT'
-  obj.cxxflags = ["-fPIC"]
+  obj.cxxflags = ["-fPIC", "-I."]
