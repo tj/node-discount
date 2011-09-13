@@ -5,9 +5,6 @@
   
 ## Installation
 
-You will need to install [Discount](http://github.com/Orc/discount) from source, or using
-a package management tool such as [homebrew](http://github.com/mxcl/homebrew), or apt-get.
-
     $ npm install discount
   
 ## Usage

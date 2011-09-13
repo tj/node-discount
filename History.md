@@ -1,4 +1,9 @@
 
+0.2.1 / 2011-09-13 
+==================
+
+  * Changed: submodule discount and statically link to it [visnup]
+
 0.2.0 / 2011-07-27 
 ==================
 
