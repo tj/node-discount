@@ -9,6 +9,7 @@ def configure(conf):
   conf.check_tool('compiler_cxx')
   conf.check_tool('node_addon')
   conf.check_cfg(atleast_pkgconfig_version='0.0.0', mandatory=True, errmsg='pkg-config was not found')
+  conf.env.set_variant('Release')
 
 def build(bld):
   bld.exec_command('cp -r ../discount/* .')
